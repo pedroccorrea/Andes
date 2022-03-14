@@ -1,0 +1,17 @@
+div#produto_detalhe {
+    width: 800px;
+    margin: 80px auto;
+    font-family: sans-serif;
+    line-height: 2em;
+    font-size: 0.9em;
+}
+
+div#produto_detalhe ul {
+    list-style: none;
+}
+
+div#produto_detalhe img{
+    float: left;
+    border: 1px solid #ddd;
+    margin-right: 15px;
+}
