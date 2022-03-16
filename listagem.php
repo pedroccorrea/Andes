@@ -5,7 +5,12 @@
     $produtos = "SELECT 
                     produtoID, nomeproduto, precounitario, tempoentrega, imagempequena
                 FROM
-                    produtos";
+                    produtos ";
+    if(isset($_GET["pesquisa"])){
+        $pesquisa = $_GET["pesquisa"];
+        $produtos .= " WHERE nomeproduto LIKE '%{$pesquisa}%' ";
+    }
+
     $con_produtos = mysqli_query($conectar, $produtos);
     if(!$con_produtos) {
         die("Falha ao conectar com o banco de dados.");

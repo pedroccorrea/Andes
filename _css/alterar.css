@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+div#janela_alteracao {
+    width: 860px;
+    margin: 50px auto 30px;
+    font-family: sans-serif;
+}
+
+div#janela_alteracao form {
+    width: 470px;
+    margin: 10px auto;
+    color: #9A9668;
+}
+
+div#janela_alteracao form h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+div#janela_alteracao form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+}
+
+div#janela_alteracao form input[type="text"] {
+    width: 350px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #9A9668;
+    margin-bottom: 30px;
+}
+
+div#janela_alteracao form select{
+    margin-bottom: 30px;
+}
+
+div#janela_alteracao form input[type="submit"] {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #9A9668;
+    color: white;
+    background-color: #C5996B;
+    cursor: pointer;
+}
