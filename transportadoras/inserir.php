@@ -1,7 +1,12 @@
 <?php
-    require_once("../conexao/conexao.php");
+    require_once("../../conexao/conexao.php");
+    session_start();
 ?>
 <?php
+    if(!$_SESSION["user"]) {
+        header("location: ../usuario/login.php");
+    }
+
     if(isset($_POST["nometransportadora"])) {
         $nometransportadora = $_POST["nometransportadora"];
         $endereco = $_POST["endereco"];
@@ -39,12 +44,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andes</title>
-    <link rel="stylesheet" href="_css/style.css">
-    <link rel="stylesheet" href="_css/inserir.css">
+    <link rel="stylesheet" href="../_css/style.css">
+    <link rel="stylesheet" href="../_css/inserir.css">
 </head>
 <body>
     <?php
-        include_once("_incluir/topo.php");
+        include_once("../_incluir/topo.php");
     ?>
 
     <main>
@@ -81,7 +86,7 @@
     </main>
 
     <?php
-        include_once("_incluir/footer.php");
+        include_once("../_incluir/footer.php");
     ?>
 </body>
 </html>

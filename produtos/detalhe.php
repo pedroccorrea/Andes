@@ -1,11 +1,12 @@
 <?php
-    require_once("../conexao/conexao.php");
+    require_once("../../conexao/conexao.php");
+    session_start();
 ?>
 <?php
     if($_GET["codigo"]) {
         $produtoID = $_GET["codigo"];
     } else {
-        header("location: listagem.php");
+        header("location: index.php");
     }
     $produtos = "SELECT *
                 FROM
@@ -36,20 +37,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andes</title>
-    <link rel="stylesheet" href="_css/style.css">
-    <link rel="stylesheet" href="_css/produto_detalhe.css">
+    <link rel="stylesheet" href="../_css/style.css">
+    <link rel="stylesheet" href="../_css/produto_detalhe.css">
 </head>
 <body>
     <?php
-        include_once("_incluir/topo.php");
-        include_once("_incluir/funcoes.php");
+        include_once("../_incluir/topo.php");
+        include_once("../_incluir/funcoes.php");
     ?>
 
     <main>
         <div id="produto_detalhe">
             <ul>
                 <li>
-                    <img src="<?php echo $imagemgrande ?>" alt="imagem ilustrativa">
+                    <img src="../<?php echo $imagemgrande ?>" alt="imagem ilustrativa">
                 </li>
                 <li><h2><?php echo $nomeproduto ?></h2></li>
                 <li><?php echo $descricao ?></li>
@@ -63,7 +64,7 @@
     </main>
 
     <?php
-        include_once("_incluir/footer.php");
+        include_once("../_incluir/footer.php");
     ?>
 </body>
 </html>

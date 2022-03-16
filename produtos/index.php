@@ -1,10 +1,10 @@
 <?php
-    require_once("../conexao/conexao.php");
+    require_once("../../conexao/conexao.php");
     session_start();
 ?>
 <?php
     if(!$_SESSION["user"]) {
-        header("location: login.php");
+        header("location: ../usuario/login.php");
     }
 
     $produtos = "SELECT 
@@ -28,19 +28,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andes</title>
-    <link rel="stylesheet" href="_css/style.css">
-    <link rel="stylesheet" href="_css/produtos.css">
+    <link rel="stylesheet" href="../_css/style.css">
+    <link rel="stylesheet" href="../_css/produtos.css">
 </head>
 <body>
     <?php
-        include_once("_incluir/topo.php");
+        include_once("../_incluir/topo.php");
     ?>
 
     <main>
         <div id="janela_pesquisa">
             <form action="listagem.php" method="get">
                 <input type="text" id="pesquisa" name="pesquisa">
-                <input type="image" id="pesquisar" name="pesquisar" src="_assets/botao_search.png">
+                <input type="image" id="pesquisar" name="pesquisar" src="../_assets/botao_search.png">
             </form>
         </div>
         <div id="listagem_produtos">
@@ -50,7 +50,7 @@
                     <ul>
                         <li class="imagem">
                             <a href="detalhe.php?codigo=<?php echo $linha["produtoID"] ?>">
-                                <img src="<?php echo $linha["imagempequena"] ?>" alt="Imagem ilustrativa">
+                                <img src="../<?php echo $linha["imagempequena"] ?>" alt="Imagem ilustrativa">
                             </a>
                         </li>
                         <li><h3><?php echo $linha["nomeproduto"] ?></h3></li>
@@ -64,7 +64,7 @@
     </main>
 
     <?php
-        include_once("_incluir/footer.php");
+        include_once("../_incluir/footer.php");
     ?>
 </body>
 </html>

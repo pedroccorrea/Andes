@@ -1,5 +1,5 @@
 <?php
-    require_once("../conexao/conexao.php");
+    require_once("../../conexao/conexao.php");
     session_start()
 ?>
 <?php
@@ -20,7 +20,7 @@
             $mensagem = "Login sem sucesso.";
         } else {
             $_SESSION["user"] = $login["clienteID"];
-            header("location: listagem.php");
+            header("location: ../produtos/index.php");
         }
     }
 ?>
@@ -31,11 +31,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andes</title>
-    <link rel="stylesheet" href="_css/style.css">
+    <link rel="stylesheet" href="../_css/style.css">
 </head>
 <body>
     <?php
-        include_once("_incluir/topo.php");
+        include_once("../_incluir/topo.php");
     ?>
     <main>
         <div id="janela_login">
@@ -57,7 +57,7 @@
     </main>
 
     <?php
-        include_once("_incluir/footer.php");
+        include_once("../_incluir/footer.php");
     ?>
 </body>
 </html>

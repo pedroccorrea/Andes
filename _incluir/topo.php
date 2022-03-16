@@ -17,15 +17,22 @@
                 $nome_cliente = $saudacao_login["nomecompleto"];
         ?>
                 <div id="header_saudacao">
-                    <p>Bem vindo, <?php echo $nome_cliente ?> ! - <a href="logout.php">Sair</a></p>
+                    <p>Bem vindo, <?php echo $nome_cliente ?> ! - <a href="../usuario/logout.php">Sair</a></p>
 
                 </div>
         <?php
             }
         ?>
-        <a href="index.php" target="_self" rel="_prev">
-            <img src="_assets/logo_andes.gif">
+        <a href="../produtos/index.php" target="_self" rel="_prev">
+            <img src="../_assets/logo_andes.gif">
         </a>
-        <img src="_assets/text_bnwcoffee.gif" alt="">
+        <img src="../_assets/text_bnwcoffee.gif" alt="">
     </div>
+    <nav>
+        <ul>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Transportadoras</a></li>
+            <li></li>
+        </ul>
+    </nav>
 </header>

@@ -1,7 +1,12 @@
 <?php
-    require_once("../conexao/conexao.php");
+    require_once("../../conexao/conexao.php");
+    session_start();
 ?>
 <?php
+    if(!$_SESSION["user"]) {
+        header("location: ../usuario/login.php");
+    }
+
     $trans = "SELECT *
             FROM
                 transportadoras";
@@ -18,12 +23,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andes</title>
-    <link rel="stylesheet" href="_css/style.css">
-    <link rel="stylesheet" href="_css/transportadoras.css">
+    <link rel="stylesheet" href="../_css/style.css">
+    <link rel="stylesheet" href="../_css/transportadoras.css">
 </head>
 <body>
     <?php
-        include_once("_incluir/topo.php");
+        include_once("../_incluir/topo.php");
     ?>
 
     <main>
@@ -34,7 +39,7 @@
                 <ul>
                     <li><?php echo  $linha["nometransportadora"] ?></li>
                     <li><?php echo $linha["cidade"] ?></li>
-                    <li><a href="alteracao.php?codigo=<?php echo $linha["transportadoraID"] ?>">Alterar</a></li>
+                    <li><a href="alterar.php?codigo=<?php echo $linha["transportadoraID"] ?>">Alterar</a></li>
                     <li><a href="excluir.php?codigo=<?php echo $linha["transportadoraID"] ?>">Excluir</a></li>
                 </ul>
             <?php
@@ -44,7 +49,7 @@
     </main>
 
     <?php
-        include_once("_incluir/footer.php");
+        include_once("../_incluir/footer.php");
     ?>
 </body>
 </html>

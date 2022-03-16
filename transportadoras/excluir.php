@@ -1,5 +1,5 @@
 <?php
-    require_once("../conexao/conexao.php");
+    require_once("../../conexao/conexao.php");
 ?>
 <?php
     //Excluir da tabela "transportadoras"
@@ -16,7 +16,7 @@
     if(isset($_GET["codigo"])) {
         $transID = $_GET["codigo"];
     } else {
-        header("location: transportadoras.php");
+        header("location: index.php");
     }
     $trans = "SELECT *
             FROM
@@ -42,12 +42,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andes</title>
-    <link rel="stylesheet" href="_css/style.css">
-    <link rel="stylesheet" href="_css/alterar.css">
+    <link rel="stylesheet" href="../_css/style.css">
+    <link rel="stylesheet" href="../_css/alterar.css">
 </head>
 <body>
     <?php
-        include_once("_incluir/topo.php");
+        include_once("../_incluir/topo.php");
     ?>
     <main>
         <div id="janela_alteracao">
@@ -71,7 +71,7 @@
     </main>
 
     <?php
-        include_once("_incluir/footer.php");
+        include_once("../_incluir/footer.php");
     ?>
 </body>
 </html>
