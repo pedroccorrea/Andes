@@ -2,8 +2,21 @@
     require_once("../conexao/conexao.php");
 ?>
 <?php
+    //Excluir da tabela "transportadoras"
+    if(isset($_POST["excluir"])){
+        $_transID = $_POST["transportadoraID"];
+        $_trans = "DELETE FROM transportadoras WHERE transportadoraID = {$_transID}";
+        $del_trans = mysqli_query($conectar, $_trans);
+        if(!$del_trans) {
+            die("Erro ao se conectar com o banco de dados.");
+        }
+    }
+
+    //Consultar a tabela "transportadoras"
     if(isset($_GET["codigo"])) {
         $transID = $_GET["codigo"];
+    } else {
+        header("location: transportadoras.php");
     }
     $trans = "SELECT *
             FROM
@@ -20,6 +33,7 @@
     $endereco = $con_trans["endereco"];
     $cidade =   $con_trans["cidade"];
     $cnpj = $con_trans["cnpj"];
+    $transportadoraID = $con_trans["transportadoraID"];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -50,6 +64,7 @@
                 <label for="cnpj">CNPJ</label>
                 <input type="text" name="cnpj" id="cnpj" value="<?php echo $cnpj ?>">
 
+                <input type="hidden" name="transportadoraID" id="transportadoraID" value="<?php echo $transportadoraID ?>">
                 <input type="submit" name="excluir" id="excluir" value="Confirmar exclusão">
             </form>
         </div>

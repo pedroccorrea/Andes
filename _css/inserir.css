@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+div#janela_inserir {
+    width: 860px;
+    margin: 50px auto;
+    font-family: sans-serif;
+}
+
+div#janela_inserir form {
+    width: 560px;
+    margin: 0 auto;
+}
+
+div#janela_inserir form input[type="text"] {
+    display: block;
+    width: 300px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #CDC99B;
+    padding: 10px 10px;
+}
+
+div#janela_inserir form select {
+    width: 250px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    border: 1px solid #CDC99B;
+    outline: none;
+}
+
+div#janela_inserir form input[type="submit"] {
+    color: white;
+    background-color: #C5996B;
+    border: 1px solid #CDC99B;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    outline: none;
+}

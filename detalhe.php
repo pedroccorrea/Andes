@@ -4,6 +4,8 @@
 <?php
     if($_GET["codigo"]) {
         $produtoID = $_GET["codigo"];
+    } else {
+        header("location: listagem.php");
     }
     $produtos = "SELECT *
                 FROM

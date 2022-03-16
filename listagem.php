@@ -1,7 +1,12 @@
 <?php
     require_once("../conexao/conexao.php");
+    session_start();
 ?>
 <?php
+    if(!$_SESSION["user"]) {
+        header("location: login.php");
+    }
+
     $produtos = "SELECT 
                     produtoID, nomeproduto, precounitario, tempoentrega, imagempequena
                 FROM
