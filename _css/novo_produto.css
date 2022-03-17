@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+div#novo_produto {
+    width: 600px;
+    margin: 50px auto;
+    font-family: sans-serif;
+    font-size: 0.9em;
+    color: #C4A368;
+}
+
+div#novo_produto form h2 {
+    margin-bottom: 20px;
+}
+
+div#novo_produto form input[type="text"], select, input[type="submit"], input[type="file"] {
+    display: block;
+    margin-bottom: 20px;
+}
+
+div#novo_produto form input[type="text"] {
+    width: 350px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid #CDC99B;
+}
+
+div#novo_produto form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+div#novo_produto form input[type="radio"] {
+    margin-bottom: 20px;
+}
+
+
+div#novo_produto form select {
+    padding: 2px 4px;
+    border: 1px solid #CDC99B;
+    border-radius: 5px;
+    outline: none;
+}
+
+div#novo_produto form input[type="submit"] {
+    padding: 10px 20px;
+    border: 1px solid #CDC99B;
+    border-radius: 5px;
+    color: white;
+    background-color: #C5996B;
+    cursor: pointer;
+    outline: none;
+}
