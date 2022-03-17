@@ -32,6 +32,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Andes</title>
     <link rel="stylesheet" href="../_css/style.css">
+    <link rel="stylesheet" href="../_css/login.css">
 </head>
 <body>
     <?php
@@ -44,6 +45,7 @@
                 <input type="text" name="usuario" id="usuario" placeholder="Usuario">
                 <input type="password" name="senha" id="senha" placeholder="Senha">
                 <input type="submit" name="login" id="login" value="Login">
+                <a href="registrar.php">Registrar</a>
 
                 <?php 
                     if(isset($mensagem)){

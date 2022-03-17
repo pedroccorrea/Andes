@@ -1,0 +1,45 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+div#janela_login {
+    font-family: sans-serif;
+    width: 500px;
+    margin: 100px auto;
+}
+
+div#janela_login input {
+    
+}
+
+div#janela_login h2 {
+    margin-bottom: 20px;
+    color: #C5996B;
+}
+
+div#janela_login input[type="text"], input[type="password"] {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 1px solid #CDC99B;
+    outline: none;
+    display: block;
+    
+}
+
+div#janela_login input[type="submit"] {
+    padding: 10px 20px;
+    margin-right: 20px;
+    color: white;
+    background-color: #C5996B;
+    border-radius: 5px;
+    border: 1px solid #C5996B;
+    outline: none;
+    cursor: pointer;
+}
+
+div#janela_login form a {
+    color: #C5996B;
+}

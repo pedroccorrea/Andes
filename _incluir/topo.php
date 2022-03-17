@@ -30,8 +30,9 @@
     </div>
     <nav>
         <ul>
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">Transportadoras</a></li>
+            <li><a href="../produtos/index.php">Produtos</a></li>
+            <li><a href="../produtos/novo.php">Novo Produto</a></li>
+            <li><a href="../transportadoras/index.php">Transportadoras</a></li>
             <li></li>
         </ul>
     </nav>

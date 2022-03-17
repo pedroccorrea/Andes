@@ -46,6 +46,9 @@
                 }
             ?>
         </div>
+        <div id="nova">
+            <a href="inserir.php">Nova transportadora</a>
+        </div>
     </main>
 
     <?php
