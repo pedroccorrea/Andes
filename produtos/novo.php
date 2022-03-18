@@ -1,5 +1,6 @@
 <?php
     require_once("../../conexao/conexao.php");
+    include_once("../_incluir/funcoes.php");
 ?>
 <?php
     if(isset($_POST["nomeproduto"])) {
@@ -9,16 +10,30 @@
         $mensagem1 = $resultado1[0];
         $mensagem2 = $resultado2[0];
 
-        $nomeproduto = $_POST["nomeproduto"];
-        $codigobarra = $_POST[""];
-        $tempoentrega = $_POST[""];
-        $precorevenda = $_POST[""];
-        $precounitario = $_POST[""];
-        $estoque = $_POST["estoque"];
+        $nomeproduto =      $_POST["nomeproduto"];
+        $codigobarra =      $_POST["codigobarra"];
+        $tempoentrega =     $_POST["tempoentrega"];
+        $categoriaID =      $_POST["categoriaID"];
+        $fornecedorID =     $_POST["fornecedorID"];
+        $precorevenda =     $_POST["precorevenda"];
+        $precounitario =    $_POST["precounitario"];
+        $estoque =          $_POST["estoque"];
         $imagemgrande = $resultado1[1];
         $imagempequena = $resultado2[1];
-        
 
+        print_r($resultado1[1]);
+        echo $imagempequena;
+        
+        $produto = "INSERT INTO
+                        produtos(nomeproduto, codigobarra, tempoentrega, categoriaID,fornecedorID, precorevenda, precounitario, estoque, imagemgrande, imagempequena)
+                    VALUES
+                        ('$nomeproduto', '$codigobarra', '$tempoentrega', '$categoriaID', '$fornecedorID', '$precorevenda', '$precounitario', '$estoque', '$imagemgrande', '$imagempequena')";
+        $con_produto = mysqli_query($conectar, $produto);
+        if(!$con_produto) {
+            die("Erro ao conectar com o banco de dados.");
+        } else {
+            $mensagem ="Insersão ocorreu com sucesso.";
+        }
     }
 
     //Consultar categorias
@@ -55,7 +70,7 @@
     ?>
     <main>
         <div id="novo_produto">
-            <form action="novo.php" method="post">
+            <form action="novo.php" method="post" enctype="multipart/form-data">
                 <h2>Incluir Novo Produto</h2>
                 <input type="text" name="nomeproduto" id="nomeproduto" placeholder="Nome do Produto">
                 <input type="text" name="codigobarra" id="codigobarra" placeholder="Código de Barra">
@@ -103,7 +118,7 @@
                 
                 <input type="hidden" name="MAX_FILE_SIZE" value="691440">
                 <label for="imagemgrande">Foto Grande</label>
-                <input type="file" name="imagemgrande" id="imagemgrande">
+                <input type="file" name="imagemgrande">
                 <span class="resposta">
                     <?php
                         if(isset($mensagem1)) {
@@ -112,7 +127,7 @@
                     ?>
                 </span>
                 <label for="imagempequena">Foto Pequena</label>
-                <input type="file" name="imagempequena" id="imagempequena">
+                <input type="file" name="imagempequena">
                 <span class="resposta">
                     <?php
                         if(isset($mensagem2)) {
@@ -121,7 +136,7 @@
                     ?>
                 </span>
                 
-                <input type="hidden" name="estoque" id="estoque" value="1">
+                <input type="hidden" name="estoque" id="estoque" value="0">
                 <input type="submit" name="inserir" id="inserir" value="Inserir novo produto">
 
                 <?php
@@ -137,3 +152,9 @@
     ?>
 </body>
 </html>
+
+<?php
+    mysqli_free_result($con_categoria);
+    mysqli_free_result($con_fornecedor);
+    mysqli_close($conectar);
+?>

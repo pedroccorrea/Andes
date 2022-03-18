@@ -21,7 +21,7 @@
         $agora = getdate();
         $codigo_data = $agora['year'] . "_" . $agora['yday'] . "_";
         $codigo_data = $agora['hours'] . $agora['minutes'] . $agora['seconds'];
-        return "foto_" . $codigo_data . $resutado;
+        return "foto_" . $codigo_data . $resultado;
     }
 
     function getExtensao($nome) {
@@ -32,7 +32,7 @@
         $arquivo_temporario = $imagem['tmp_name'];
         $nome_original = basename($imagem['name']);
         $nome_novo = gerarcondigo() . getExtensao($nome_original);
-        $nome_completo = "../imagens/product_images/" . $nome_novo;
+        $nome_completo = "/images/product_images/" . $nome_novo;
 
         if(move_uploaded_file($arquivo_temporario, $nome_completo)) {
             return array("Imagem publicada com sucesso", $nome_completo);
@@ -40,6 +40,20 @@
             return array(retornarErro($imagem['error']), "");
         }
     }
+
+
+    /*function publicar($imagem) {
+        $arquivo_temporario = $imagem['tmp_name'];
+        $nome_original = basename($imagem['name']);
+        $nome_novo = gerarcondigo() . getExtensao($nome_original);
+        $nome_completo = "../imagens/product_images/" . $nome_novo;
+
+        if(move_uploaded_file($arquivo_temporario, $nome_completo)) {
+            return array("Imagem publicada com sucesso", $nome_completo);
+        } else {
+            return array(retornarErro($imagem['error']), "");
+        }
+    }*/
 
     function retornarErro($numero_erro) {
         $array_erro = array (
