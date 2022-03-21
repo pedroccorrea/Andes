@@ -32,7 +32,7 @@
         $arquivo_temporario = $imagem['tmp_name'];
         $nome_original = basename($imagem['name']);
         $nome_novo = gerarcondigo() . getExtensao($nome_original);
-        $nome_completo = "/images/product_images/" . $nome_novo;
+        $nome_completo = "../images/product_images/" . $nome_novo;
 
         if(move_uploaded_file($arquivo_temporario, $nome_completo)) {
             return array("Imagem publicada com sucesso", $nome_completo);

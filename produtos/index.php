@@ -38,7 +38,7 @@
 
     <main>
         <div id="janela_pesquisa">
-            <form action="listagem.php" method="get">
+            <form action="index.php" method="get">
                 <input type="text" id="pesquisa" name="pesquisa">
                 <input type="image" id="pesquisar" name="pesquisar" src="../_assets/botao_search.png">
             </form>
@@ -50,7 +50,7 @@
                     <ul>
                         <li class="imagem">
                             <a href="detalhe.php?codigo=<?php echo $linha["produtoID"] ?>">
-                                <img src="../<?php echo $linha["imagempequena"] ?>" alt="Imagem ilustrativa">
+                                <img src="<?php echo $linha["imagempequena"] ?>" alt="Imagem ilustrativa">
                             </a>
                         </li>
                         <li><h3><?php echo $linha["nomeproduto"] ?></h3></li>

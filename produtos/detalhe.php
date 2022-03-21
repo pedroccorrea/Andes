@@ -50,7 +50,7 @@
         <div id="produto_detalhe">
             <ul>
                 <li>
-                    <img src="../<?php echo $imagemgrande ?>" alt="imagem ilustrativa">
+                    <img src="<?php echo $imagemgrande ?>" alt="imagem ilustrativa">
                 </li>
                 <li><h2><?php echo $nomeproduto ?></h2></li>
                 <li><?php echo $descricao ?></li>

@@ -8,6 +8,32 @@ header {
     height: 70px;
     background-color: #EDEDDC;
     border-bottom: 1px solid #666;
+    margin-bottom: 30px;
+}
+
+nav {
+    width: 800px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+nav ul {
+    margin-top: 15px;
+}
+
+nav li{
+    display: inline-block;  
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 5px;
+    color: #C5996B;
+}
+
+nav ul li a:hover {
+    border-bottom: 2px solid #C5996B;
+    color: #C5996B;
 }
 
 div#header_central {
